@@ -40,19 +40,19 @@ let book11 = {
     title: 'Практикантка',
     pageCount: 126,
     genre: 'Боевая фантастика',
-    authors: ['name: Каменистый Артем', 'age: 39'],
+    authors: ['name: Каменистый Артем', 'age: 39'], //имелось ввиду масив или обьект, потому что массив только в таком виде не выдает ошибку
 }
 let book12 = {
     title: 'Эпоха мертвых',
     pageCount: 238,
     genre: 'Боевая фантастика',
-    authors: ['name: Круз Андрей', 'age: 23'],
+    authors: {name: 'Круз Андрей', age: 23},
 }
 let book13 = {
     title: 'Голодные игры',
     pageCount: 109,
     genre: 'Боевая фантастика',
-    authors: ['name: Коллинз Сьюзен', 'age: 41'],
+    authors: {name: 'Коллинз Сьюзен', age: 41},
 }
 console.log(book11, book12, book13);
 
@@ -282,3 +282,30 @@ if (!bbb){
 // - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray.
 //   За допомоги іф перевірити кожен його елемент на тривалість навчання.
 //   У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
+
+let coursesAndDurationArray = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
+];
+if (coursesAndDurationArray[0]["monthDuration"] > 5){
+    console.log('Супер');
+}
+if (coursesAndDurationArray[1]["monthDuration"] > 5){
+    console.log('Супер');
+}
+if (coursesAndDurationArray[2]["monthDuration"] > 5){
+    console.log('Супер');
+}
+if (coursesAndDurationArray[3]["monthDuration"] > 5){
+    console.log('Супер');
+}
+if (coursesAndDurationArray[4]["monthDuration"] > 5){
+    console.log('Супер');
+}
+if (coursesAndDurationArray[5]["monthDuration"] > 5){
+    console.log('Супер');
+}
