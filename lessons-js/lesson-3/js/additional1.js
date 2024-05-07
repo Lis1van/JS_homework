@@ -291,7 +291,7 @@ let books = [
     {
         title: 'Убить пересмешника',
         pageCount: 281,
-        authors: ['Харпер Ли'],
+        authors: ['Харпер Ли', 'Дж. Д. Сэлинджер'],
         genres: ['Южная готика', 'Драма']
     },
     {
@@ -360,30 +360,29 @@ console.log(maxPageCountBook);
 
 // - знайти книжку/ки з найбільшою кількістю жанрів
 
-// let maxGenresCount = 0;
-// let maxGenresBooks = [];
-// for (let i = 0; i < books.length; i++) {
-//     if (books[i].genres.length > maxGenresCount) {
-//         maxGenresCount = books[i].genres.length;
-//         maxGenresBooks = [books[i]];
-//     }  else if (books[i].genres.length === maxGenresCount) {
-//         maxGenresBooks.push(books[i]);
-//     }
-//     if (maxGenresBooks.length === 0) {
-//         console.log("Жодна книга не містить жодного жанру.");
-//     } else {
-//         console.log("Книга(-и) з найбільшою кількістю жанрів:");
-//         console.log(maxGenresBooks);
-//     }
-// }
-// console.log("Книга з найбільшою кількістю жанрів:");
-// console.log(maxGenresBooks);
+let maxGenresCount = 0;
+let maxGenresBooks = [];
+for (let i = 0; i < books.length; i++) {
+    if (books[i].genres.length > maxGenresCount) {
+        maxGenresCount = books[i].genres.length;
+        maxGenresBooks = [books[i]];
+    }  else if (books[i].genres.length === maxGenresCount) {
+        maxGenresBooks.push(books[i]);
+    }
+    if (maxGenresBooks.length === 0) {
+        console.log("Жодна книга не містить жодного жанру.");
+    } else {
+        console.log("Книга(-и) з найбільшою кількістю жанрів:");
+        console.log(maxGenresBooks);
+    }
+}
+console.log("Книга з найбільшою кількістю жанрів:");
+console.log(maxGenresBooks);
 
 // - знайти книжку/ки з найдовшою назвою
 
 let maxLength = 0;
-let longestTitleBooks = [null];
-
+let longestTitleBooks = [];
 for (let i = 0; i < books.length; i++) {
     if (books[i].title.length > maxLength) {
         maxLength = books[i].title.length;
@@ -392,7 +391,6 @@ for (let i = 0; i < books.length; i++) {
         longestTitleBooks.push(books[i]);
     }
 }
-
 console.log("Книга(-и) з найдовшою назвою:");
 console.log(longestTitleBooks);
 

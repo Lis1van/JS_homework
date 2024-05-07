@@ -239,15 +239,16 @@ for (const usersListElement of usersList) {
     document.write(`
            <div class="users-box">
                 <div class="user-block">
-                <h2>${usersListElement.id} - ${usersListElement.name} - ${usersListElement.username} </h2>
-        <h3>${usersListElement.email} - ${usersListElement.phone}</h3>
-        <div class="address-block">
-            <p>City - ${usersListElement.address.city}</p>
-            <p>Street - ${usersListElement.address.street}</p>
-            <p>Suite - ${usersListElement.address.suite}</p>
-            <p>Zip code - ${usersListElement.address.zipcode}</p>
-        </div>
-    </div>
+                    <h2>${usersListElement.id} - ${usersListElement.name} - ${usersListElement.username} </h2>
+                    <h3>${usersListElement.email} - ${usersListElement.phone}</h3>
+                    <div class="address-block">
+                        <p>City - ${usersListElement.address.city}</p>
+                        <p>Street - ${usersListElement.address.street}</p>
+                        <p>Suite - ${usersListElement.address.suite}</p>
+                        <p>Zip code - ${usersListElement.address.zipcode}</p>
+                    </div>
+                </div>
+           </div>     
     `)
 
 }
