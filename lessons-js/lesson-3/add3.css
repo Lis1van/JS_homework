@@ -1,0 +1,25 @@
+body{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.wrap {
+    display: flex;
+    height: 250px;
+}
+
+.post-card {
+    width: 16vw;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    margin-top: 0;
+}
+
+p {
+    margin-bottom: 0;
+}
