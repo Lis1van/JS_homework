@@ -1,7 +1,9 @@
 // - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
 
 function square (side_a, side_b) {
-    let result = side_a * side_b;
+    // let result = side_a * side_b; // в таком виде intellij желтым подчеркивает result
+    let result;
+    result = side_a * side_b; // а так не подчеркивает
     return result;
 }
 let res = square(2, 3);
@@ -10,7 +12,8 @@ console.log(res);
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
 
 function squareCircle (r) {
-    let result2 = 3.14 * (r * r);
+    let result2;
+    result2 = 3.14 * (r * r);
 // или как подсказал google скорее всего правильно, но мы это не учили
 //     let result2 = Math.PI * Math.pow(r, 2);
     return result2;
@@ -21,7 +24,8 @@ console.log(res2);
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
 
 function squareCylinder (r, h) {
-    let result3 = 2* 3.14 * r * r + 2 * 3.14 * r * h;
+    let result3;
+    result3 = 2* 3.14 * r * r + 2 * 3.14 * r * h;
     //дальше помог дружище Google, у нас будут занятие по этим Math
     // var lateralArea = 2 * Math.PI * r * h;
     // var baseArea = Math.PI * Math.pow(r, 2);
@@ -47,7 +51,7 @@ function paragraph (text) {
     document.write(`<p>${text}</p>`);
     return document.write;
 }
-let parText = paragraph('Как то так. Надо больше практики.')
+paragraph('Как то так. Надо больше практики.')
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
 
