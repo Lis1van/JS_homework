@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>lesson 10</title>
+	<link rel="stylesheet" href="less_10.css">
+</head>
+<body onload="updateCount(); initPrice()">
+<h1>Форма з полями</h1>
+<form>
+	<label for="name">Ім'я:</label>
+	<input type="text" id="name" name="name"><br><br>
+	
+	<label for="surname">Прізвище:</label>
+	<input type="text" id="surname" name="surname"><br><br>
+	
+	<label for="age">Вік:</label>
+	<input type="number" id="age" name="age"><br><br>
+	
+	<button type="button" onclick="displayObject()">Відправити</button>
+</form>
+
+<div id="object-container"></div>
+
+<div id="count-container"></div>
+
+<h1>Головна сторінка</h1>
+
+<h1>Перегляд об'єктів</h1>
+<div class="object-container"></div>
+<button id="prev-btn" disabled>Prev</button>
+<button id="next-btn">Next</button>
+
+<hr>
+
+<div id="text">Це текст, який має зникнути при натисканні кнопки.</div>
+<button id="hideButton">Приховати текст</button>
+
+<hr>
+
+<label for="ageInput">Введіть ваш вік:</label>
+<input type="number" id="ageInput" min="0">
+<button id="checkAgeButton">Перевірити вік</button>
+<div id="ageMessage"></div>
+
+<hr>
+
+<label for="rowsInput">Кількість рядків:</label>
+<input type="number" id="rowsInput" min="1" value="1">
+<br>
+<label for="colsInput">Кількість стовпців:</label>
+<input type="number" id="colsInput" min="1" value="1">
+<br>
+<label for="contentInput">Вміст ячеєк:</label>
+<input type="text" id="contentInput" value="Ячейка">
+<br>
+<button id="createTableButton">Створити таблицю</button>
+<div id="tableContainer"></div>
+
+<hr>
+
+<div id="price-container"></div>
+
+<script src="less_10.js"></script>
+</body>
+</html>
