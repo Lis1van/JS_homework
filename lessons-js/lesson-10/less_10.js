@@ -1,4 +1,4 @@
-// Стоврити форму з трьома полями для name,sruname,age та кнопкою. При натисканні на кнопку зчитати данні з полів,
+// Стоврити форму з трьома полями для name,surname,age та кнопкою. При натисканні на кнопку зчитати данні з полів,
 // та вивести об'єкт в документ. Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
 
 function displayObject() {
@@ -151,25 +151,65 @@ createTableButton.addEventListener('click', function() {
 //     зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після попереднього.
 //     При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд - нічого не відбувається
 
-let price = 100;
-let lastReloadTime = null;
+const priceElement = document.getElementById('price');
 
-function initPrice() {
-    updatePrice();
-}
+// Початкова ціна
+const initialPrice = 100;
 
-function updatePrice() {
+// Отримати збережену ціну і час з localStorage
+let storedPrice = localStorage.getItem('price');
+let lastUpdate = localStorage.getItem('lastUpdate');
+
+// Якщо збережена ціна не існує, встановлюємо початкову ціну
+if (storedPrice === null) {
+    storedPrice = initialPrice;
+    localStorage.setItem('price', storedPrice.toString());
+    localStorage.setItem('lastUpdate', new Date().getTime().toString());
+} else {
+    storedPrice = parseInt(storedPrice);
+    lastUpdate = parseInt(lastUpdate);
+
+    // Отримати поточний час
     const now = new Date().getTime();
 
-    if (lastReloadTime === null) {
-        // Первая загрузка страницы
-        lastReloadTime = now;
-    } else if (now - lastReloadTime >= 10000) {
-        // Прошло 10 секунд или больше с последнего обновления
-        price += 10;
-        lastReloadTime = now;
+    // Якщо останнє оновлення було більше ніж 10 секунд тому, оновити ціну
+    if (now - lastUpdate > 10000) {
+        storedPrice += 10;
+        localStorage.setItem('price', storedPrice.toString());
+        localStorage.setItem('lastUpdate', now.toString());
     }
-
-    const priceContainer = document.getElementById('price-container');
-    priceContainer.textContent = `${price} грн`;
 }
+
+// Оновити відображувану ціну в блоці
+priceElement.textContent = `${storedPrice}грн`;
+// const priceElement = document.getElementById('price');
+//
+// // Початкова ціна
+// const initialPrice = 100;
+//
+// // Отримати збережену ціну і час з localStorage
+// let storedPrice = localStorage.getItem('price');
+// let lastUpdate = localStorage.getItem('lastUpdate');
+//
+// // Якщо збережена ціна не існує, встановлюємо початкову ціну
+// if (storedPrice === null) {
+//     storedPrice = initialPrice;
+//     localStorage.setItem('price', storedPrice);
+//     localStorage.setItem('lastUpdate', new Date().getTime());
+// } else {
+//     storedPrice = parseInt(storedPrice);
+//     lastUpdate = parseInt(lastUpdate);
+//
+//     // Отримати поточний час
+//     const now = new Date().getTime();
+//
+//     // Якщо останнє оновлення було більше ніж 10 секунд тому, оновити ціну
+//     if (now - lastUpdate > 10000) {
+//         storedPrice += 10;
+//         localStorage.setItem('price', storedPrice);
+//         localStorage.setItem('lastUpdate', now);
+//     }
+// }
+//
+// // Оновити відображувану ціну в блоці
+// priceElement.textContent = `${storedPrice}грн`;
