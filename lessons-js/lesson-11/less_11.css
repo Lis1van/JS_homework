@@ -1,0 +1,36 @@
+.cart {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    background-color: #dad5d5;
+}
+.cart div {
+    margin: 5px 0;
+}
+.hrColor{
+    border: 1px solid red;
+}
+.recipe {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    background-color: #e4bfbf;
+}
+.recipe div {
+    margin: 5px 0;
+}
+.ingredients {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    margin: 5px 0;
+}
+a {
+    text-decoration: none;
+    color: blue;
+}
